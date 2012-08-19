@@ -14,18 +14,18 @@
 project(DESKTOP)
 
 # require Qt 4.8
-set(QT_VERSION 4.8.0)
+set(QT_VERSION 4.8.3)
 
 # on unix prefer qtsdk installs over system-level libraries. note this
 # can be overriden by defining QT_QMAKE_EXECUTABLE when invoking cmake
 if(NOT WIN32)
    # prefer rstudio qtsdk install then home qtsdk install
    if(NOT QT_QMAKE_EXECUTABLE)
-      set(QMAKE_QT48_SDK "/opt/RStudio-QtSDK/Desktop/Qt/4.8.0/gcc/bin/qmake")
+      set(QMAKE_QT48_SDK "/opt/RStudio-QtSDK/Desktop/Qt/4.8.3/gcc/bin/qmake")
       if(EXISTS ${QMAKE_QT48_SDK})
          set(QT_QMAKE_EXECUTABLE ${QMAKE_QT48_SDK})
       else()
-         set(QMAKE_QT48_SDK "$ENV{HOME}/QtSDK/Desktop/Qt/4.8.1/gcc/bin/qmake")
+         set(QMAKE_QT48_SDK "$ENV{HOME}/QtSDK/Desktop/Qt/4.8.3/gcc/bin/qmake")
          if(EXISTS ${QMAKE_QT48_SDK})
             set(QT_QMAKE_EXECUTABLE ${QMAKE_QT48_SDK})
          endif()
